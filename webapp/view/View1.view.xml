@@ -1,0 +1,15 @@
+<mvc:View controllerName="demo.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+    	<f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false"
+				emptySpanXL="1" emptySpanL="1" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+				<f:content>
+                <Label text="Claim Type" design="Bold"/>
+                <Input value=""/>
+                </f:content>
+                </f:SimpleForm>
+    </Page>
+</mvc:View>
