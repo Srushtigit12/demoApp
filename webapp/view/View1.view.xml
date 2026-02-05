@@ -2,8 +2,30 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.ui.layout.form"
     xmlns:l="sap.ui.layout"
+    xmlns:chart="sap.suite.ui.microchart"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}" titleAlignment="Center">
+    <GenericTile header="Open" class="sapUiTinyMargin"  >
+                            <TileContent>
+                                
+                                    <!-- Numeric value -->
+                                    <NumericContent value="1000" truncateValueTo="6" withMargin="false" valueColor="Good">
+                                        <layoutData>
+                                            <!-- Allow number to consume available space -->
+                                            <FlexItemData growFactor="1" />
+                                        </layoutData>
+                                    </NumericContent>
+ 
+                                    <!-- Radial chart -->
+                                  
+                                 
+ 
+                                    <!-- Radial chart -->
+                                 
+ 
+                              
+                            </TileContent>
+                        </GenericTile>
     	<f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false"
 				emptySpanXL="1" emptySpanL="1" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
 				<f:content>
