@@ -1,5 +1,6 @@
 <mvc:View controllerName="demo.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns:f="sap.ui.layout.form"
     xmlns:l="sap.ui.layout"
     xmlns:chart="sap.suite.ui.microchart"
@@ -30,9 +31,13 @@
 				emptySpanXL="1" emptySpanL="1" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
 				<f:content>
                 <Label text="Claim Type" design="Bold"/>
-                <Input value=""/>
+                <ComboBox selectedKey="{worklistView>/sKey}">
+                  <core:Item key="1" text="STD" />
+                  <core:Item key="2" text="LTD" />
+                  <core:Item key="3" text="Unpaid Medical Leaves" />
+                </ComboBox>
                 <Label text="Sub Type" design="Bold"/>
-                <Input value="" editable="false"/>
+                <Input value="" editable="{=${worklistView>/sKey} !== '' ? true: false}"/>
                 </f:content>
                 </f:SimpleForm>
     </Page>
