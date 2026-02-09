@@ -37,7 +37,7 @@
                   <core:Item key="3" text="Unpaid Medical Leaves" />
                 </ComboBox>
                 <Label text="Sub Type" design="Bold"/>
-                <Input value="" editable="{=${worklistView>/sKey} !== '' ? true: false}"/>
+                <Input value="hELLO" editable="{=${worklistView>/sKey} !== '' ? true: false}"/>
                 </f:content>
                 </f:SimpleForm>
     </Page>
