@@ -6,10 +6,12 @@ sap.ui.define([
 
     return Controller.extend("demo.controller.View1", {
         onInit() {
-            var worklist = new JSONModel({
-                "sKey": ""
+            var oViewModel = new JSONModel({
+              'ClaimDetails':{
+                CLMTY:''
+              }
             });
-            this.oView.setModel(worklist, "worklistView");
+            this.getView().setModel(oViewModel, "worklistView");
         }
     });
 });

@@ -1,44 +1,40 @@
 <mvc:View controllerName="demo.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core"
-    xmlns:f="sap.ui.layout.form"
+      xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
     xmlns:l="sap.ui.layout"
-    xmlns:chart="sap.suite.ui.microchart"
-    xmlns="sap.m">
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:bar="sap.f">
     <Page id="page" title="{i18n>title}" titleAlignment="Center">
-    <GenericTile header="Open" class="sapUiTinyMargin"  >
-                            <TileContent>
-                                
-                                    <!-- Numeric value -->
-                                    <NumericContent value="1000" truncateValueTo="6" withMargin="false" valueColor="Good">
-                                        <layoutData>
-                                            <!-- Allow number to consume available space -->
-                                            <FlexItemData growFactor="1" />
-                                        </layoutData>
-                                    </NumericContent>
  
-                                    <!-- Radial chart -->
-                                  
-                                 
- 
-                                    <!-- Radial chart -->
-                                 
- 
-                              
-                            </TileContent>
-                        </GenericTile>
-    	<f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false"
-				emptySpanXL="1" emptySpanL="1" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
-				<f:content>
-                <Label text="Claim Type" design="Bold"/>
-                <ComboBox selectedKey="{worklistView>/sKey}">
-                  <core:Item key="1" text="STD" />
-                  <core:Item key="2" text="LTD" />
-                  <core:Item key="3" text="Unpaid Medical Leaves" />
-                </ComboBox>
-                <Label text="Sub Type" design="Bold"/>
-                <Input value="hELLO" editable="{=${worklistView>/sKey} !== '' ? true: false}"/>
-                </f:content>
-                </f:SimpleForm>
+       <content>
+           <form:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" visible="{MASTER_MODEL>/Labels/V_CLAIM_TYPE}">
+				<form:content>
+					<Label text="Claim Type" required="true" design="Bold" class="sapUiTinyMarginTop">
+						<layoutData>
+							<l:GridData span="XL4 L4 M4 S12"/>
+						</layoutData>
+					</Label>
+					<ComboBox selectedKey="{worklistView>/ClaimDetails/CLMTY}" value="{worklistView>/ClaimDetails/CTPTX}" name="true" change="onChangeClaimType" >
+						<core:Item key="1" text="STD"/>
+                        <core:Item key="2" text="LTD"/>
+                        <core:Item key="3" text="Medical Accomodation"/>
+                        <core:Item key="4" text="Unpaid Leaves"/>
+						<layoutData>
+							<l:GridData span="XL4 L4 M4 S11"/>
+						</layoutData>
+					</ComboBox>
+					
+				</form:content>
+			</form:SimpleForm>
+            <IconTabBar visible="{= ${worklistView>/ClaimDetails/CLMTY}!== '' &amp;&amp; ${worklistView>/ClaimDetails/CLMTY}=== '1' }" selectedKey="{worklistView>/worklist_IconTabSelect}">
+				<items>
+					<IconTabFilter  design="Horizontal" text="Claim Details" key="1">
+						<core:Fragment fragmentName="demo.view.WL_IconTab_Fragments.Frag_ClaimDetails" type="XML"/>
+					</IconTabFilter>
+					
+				</items>
+			</IconTabBar>
+        </content>
     </Page>
 </mvc:View>
