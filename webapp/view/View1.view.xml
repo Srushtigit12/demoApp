@@ -32,6 +32,9 @@
 					<IconTabFilter  design="Horizontal" text="Claim Details" key="1">
 						<core:Fragment fragmentName="demo.view.WL_IconTab_Fragments.Frag_ClaimDetails" type="XML"/>
 					</IconTabFilter>
+					<IconTabFilter  design="Horizontal" text="Attachmemt" key="2">
+						<core:Fragment fragmentName="demo.view.WL_IconTab_Fragments.Frag_Attachments" type="XML"/>
+					</IconTabFilter>
 					
 				</items>
 			</IconTabBar>

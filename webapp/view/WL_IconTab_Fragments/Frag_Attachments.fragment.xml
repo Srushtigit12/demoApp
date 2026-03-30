@@ -1,0 +1,88 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:gt="sap.ui.table" xmlns:upload="sap.m.upload">
+	<VBox id="_id_Attachment">  
+	<Panel expandable="false" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Attachment"/>
+				<ToolbarSpacer/>
+				<Button text="Add Attachment" visible="true"
+				 type="Emphasized" press="onPress_OpenAddAttachment"/>
+		
+			</Toolbar>
+		</headerToolbar>
+		<l:BlockLayout background="Dashboard" class="sapUiNoContentPadding sapUiNoMargin">
+			<l:BlockLayoutRow class="sapUiNoContentPadding sapUiNoMargin">
+				<l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" class="sapUiNoContentPadding sapUiNoMargin">
+					<gt:Table selectionMode="None" rowHeight="auto" rows="{path: 'worklistView>/Document', sorter:{path:'ATTID', descending:true}}" visibleRowCount="{worklistView>/iDocument}">
+						<gt:columns>
+							<gt:Column visible="true" width="22rem">
+							
+									<Label text="Attachment" design="Bold" wrapping="true" textAlign="Center"/>
+								
+								
+								<gt:template>
+									<Link text="{worklistView>ATTNM}" wrapping="true" emphasized="true" press="onPressLinkAttachment"/>
+								</gt:template>
+							</gt:Column>
+							<gt:Column visible="true" width="15rem">
+								
+									<Label text="File type" design="Bold" wrapping="true" textAlign="Center"/>
+									
+								<gt:template>
+									<ComboBox class="disableCombo" editable="true" name="{MASTER_MODEL>/Labels/M_ATCH_TBL_CLMN_2}"
+										selectedKey="{path:'worklistView>FILTY'}" width="100%"
+										items="{path : '/YXaE0ghvuhx14QTh', sorter: [{path: 'COLID'}], filters : [ { path : 'TYVAL', operator : 'EQ', value1 : 'MSDMTY67'} ]}">
+										<core:Item key="{UNQID}" text="{TXVAL}"/>
+									</ComboBox>
+								</gt:template>
+							</gt:Column>
+							<gt:Column visible="true" width="13rem">
+							
+									<Label text="Submitted By" design="Bold" wrapping="true" textAlign="Center"/>
+								
+								<gt:template>
+									<Text text="{worklistView>SUBBY}" width="100%"/>
+								</gt:template>
+							</gt:Column>
+							<gt:Column visible="true" width="12rem">
+								
+									<Label text="Date" design="Bold" wrapping="true" textAlign="Center"/>
+									
+								
+								<gt:template>
+									<DatePicker value="{ path: 'worklistView>SUBDT'}" displayFormat="MMM-dd-yyyy" class="disableDate" editable="false"
+										valueFormat="yyyy/MM/dd"/>
+								</gt:template>
+							</gt:Column>
+							
+							<gt:Column visible="true" width="20rem">
+								
+									<Label text="Description" design="Bold" wrapping="true" textAlign="Center"/>
+							
+							
+								<gt:template>
+									<TextArea editable="false" width="100%" maxLength="5000" name="true" value="{path:'worklistView>DESCP'}" rows="3"
+										liveChange="_onLC_TextArea"/>
+								</gt:template>
+							</gt:Column>
+							<gt:Column width="3.3rem">
+							
+									<Label text="" design="Bold" wrapping="true" textAlign="Center"/>
+									<!--<ToolbarSpacer/>-->
+									<!--<Button icon="sap-icon://sys-help-2" type="Transparent" tooltip="{MASTER_MODEL>/Labels/L_help}" width="2rem"-->
+									<!--	press="onPressInstructionsHelp('H_ATCH_TBL_CLMN_6')"/>-->
+							
+								<gt:template>
+									<Button icon="sap-icon://delete" type="Reject" press="onPressDeleteAttachment"/>
+								</gt:template>
+							</gt:Column>
+						</gt:columns>
+					</gt:Table>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Panel>
+
+    </VBox> 
+</core:FragmentDefinition>
