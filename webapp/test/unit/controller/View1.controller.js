@@ -11,8 +11,7 @@ sap.ui.define([
 		var oAppController = new Controller();
 		oAppController.onInit();
 		assert.ok(oAppController);
-		var result = "Hello";
-		assert.equal(result, "Hello", "Basic test passed");
+		
 	});
 
 });
