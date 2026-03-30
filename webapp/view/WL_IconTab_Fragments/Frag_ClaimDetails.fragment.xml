@@ -178,9 +178,6 @@
         </Panel>
     
 
-        <!--**************************** CLAIM TYPE CUSTOM CLAIM TYPE1 ENDS ***********************************-->
-        <!--**************************** CLAIM TYPE CUSTOM CLAIM TYPE2 STARTS ***********************************-->
-
-        <!--**************************** CLAIM TYPE CUSTOM CLAIM TYPE10 ENDS ***********************************-->
+       
     </VBox>
 </core:FragmentDefinition>
