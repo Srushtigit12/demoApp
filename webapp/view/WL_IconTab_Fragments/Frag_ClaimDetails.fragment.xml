@@ -117,7 +117,7 @@
         <!-- EMPLOYEE DETAILS END -->
         <!--********************************* RERPOTED BY DETAILS ENDS ***************************-->
         <!--********************************* CLAIM TYPE STD STARTS ***************************-->
-        <Panel id="_id_CLMTY_1" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{=!(${MASTER_MODEL>/isMEDICALACCOMODATIONSELECTED} || ${MASTER_MODEL>/isUNPAIDMLEAVESELECTED} || ${MASTER_MODEL>/isOTHERCLAIMSELECTED})}">
+        <Panel id="_id_CLMTY_1" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{=${worklistView>/ClaimDetails/CLMTY}=== '1'}">
 
             <headerToolbar>
                 <Toolbar id="_IDGenToolbar7">
@@ -125,10 +125,10 @@
                     <ToolbarSpacer id="_IDGenToolbarSpacer8"/>
                 </Toolbar>
             </headerToolbar>
-            <l:BlockLayout id="_IDGenBlockLayout3" background="Dashboard">
-                <l:BlockLayoutRow id="_IDGenBlockLayoutRow3" class="sapUiNoContentPadding sapUiNoMargin">
+            <l:BlockLayout  background="Dashboard">
+                <l:BlockLayoutRow  class="sapUiNoContentPadding sapUiNoMargin">
                     <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" id="_id_TITLE1_CELL12" visible="true">
-                        <f:SimpleForm id="_IDGenSimpleForm33" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" editable="true" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                        <f:SimpleForm  layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" editable="true" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
                             <Label text="{i18n>FirstMissedShift}" design="Bold" />
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
 
@@ -140,7 +140,7 @@
                             <f:content/>
                         </f:SimpleForm>
                     </l:BlockLayoutCell>
-                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" id="_id_TITLE1_CELLinj" visible="{= ${MASTER_MODEL>/Labels/V_TITLE1_CELL2} }">
+                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" visible="{= ${MASTER_MODEL>/Labels/V_TITLE1_CELL2} }">
                         <f:SimpleForm id="_IDGenSimpleFormdescr" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="true" editable="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true">
                             <Label text="{i18n>ReturntoModifiedWorkDate}" design="Bold"/>
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
@@ -158,8 +158,68 @@
                     </l:BlockLayoutCell>
                 </l:BlockLayoutRow>
                 <l:BlockLayoutRow id="_IDGenBlockLayoutRowDes" class="sapUiNoContentPadding sapUiNoMargin">
-                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" id="_id_TITLE1_CELL" visible="true">
+                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" visible="true">
                         <f:SimpleForm id="_IDGenSimpleForminj" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" editable="true" singleContainerFullSize="false">
+
+                            <f:content>
+                                <Label text="{i18n>DescriptionofInjuryIllness}" design="Bold" required="true"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="Maximum character limit is 5000" maxLength="5000" width="100%" rows="3"/>
+
+                                <Label text="{i18n>Notes}" design="Bold" required="true"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="Maximum character limit is 5000" maxLength="5000" width="100%" rows="3"/>
+                            </f:content>
+                        </f:SimpleForm>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+
+            </l:BlockLayout>
+            <!--<core:Fragment fragmentName="sls.dsm.crclm.SLS_DSM_SLS_CRCLM_ALL.view.WL_IconTab_Fragments.ClaimType_Fragments. " type="XML"/>-->
+
+        </Panel>
+        <!-- LTD -->
+         <Panel id="_id_CLMTY_2" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{=${worklistView>/ClaimDetails/CLMTY}=== '2'}">
+
+            <headerToolbar>
+                <Toolbar >
+                    <Title  text="Long Term Disability (STD)"/>
+                    <ToolbarSpacer />
+                </Toolbar>
+            </headerToolbar>
+            <l:BlockLayout id="_IDGenBlockLayout3" background="Dashboard">
+                <l:BlockLayoutRow id="_IDGenBlockLayoutRow3" class="sapUiNoContentPadding sapUiNoMargin">
+                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" visible="true">
+                        <f:SimpleForm  layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" editable="true" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                            <Label text="{i18n>FirstMissedShift1}" design="Bold" />
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+                            <Label text="{i18n>DateofInjuryIllness2}" design="Bold" required="true"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+                            <Label text="{i18n>ExpectedReturnDate3}" design="Bold"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+                            <f:content/>
+                        </f:SimpleForm>
+                    </l:BlockLayoutCell>
+                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" id="_id_TITLE1_CELLinj" visible="{= ${MASTER_MODEL>/Labels/V_TITLE1_CELL2} }">
+                        <f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="true" editable="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true">
+                            <Label text="{i18n>ReturntoModifiedWorkDate}" design="Bold"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+                            <Label text="{i18n>ActualReturnDate}" design="Bold"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+                            <Label text="{i18n>TypeofReturntoWork}" design="Bold"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+
+
+                            <f:content/>
+                        </f:SimpleForm>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+                <l:BlockLayoutRow  class="sapUiNoContentPadding sapUiNoMargin">
+                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" id="_id_TITLE1_CELL" visible="true">
+                        <f:SimpleForm  layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" editable="true" singleContainerFullSize="false">
 
                             <f:content>
                                 <Label text="{i18n>DescriptionofInjuryIllness}" design="Bold" required="true"/>

@@ -27,7 +27,7 @@
 					
 				</form:content>
 			</form:SimpleForm>
-            <IconTabBar visible="{= ${worklistView>/ClaimDetails/CLMTY}!== '' &amp;&amp; ${worklistView>/ClaimDetails/CLMTY}=== '1' }" selectedKey="{worklistView>/worklist_IconTabSelect}">
+            <IconTabBar visible="{= ${worklistView>/ClaimDetails/CLMTY}!== '' &amp;&amp; (${worklistView>/ClaimDetails/CLMTY}=== '1'  || ${worklistView>/ClaimDetails/CLMTY}=== '2' ) }" selectedKey="{worklistView>/worklist_IconTabSelect}">
 				<items>
 					<IconTabFilter  design="Horizontal" text="Claim Details" key="1">
 						<core:Fragment fragmentName="demo.view.WL_IconTab_Fragments.Frag_ClaimDetails" type="XML"/>
