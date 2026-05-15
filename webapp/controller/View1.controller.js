@@ -8,7 +8,8 @@ sap.ui.define([
         onInit() {
             var oViewModel = new JSONModel({
               'ClaimDetails':{
-                CLMTY:''
+                CLMTY:'',
+                'CLMSUB':""
               }
             });
             this.getView().setModel(oViewModel, "worklistView");
