@@ -11,7 +11,7 @@
         <!--********************************* RERPOTED BY DETAILS STARTS ***************************-->
         <!-- CASE MANAGER DETAILS STARTS -->
         <Panel id="_IDGenPanel1" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{= ${MASTER_MODEL>/isSTDSelected} || ${MASTER_MODEL>/isMEDICALACCOMODATIONSELECTED} || ${MASTER_MODEL>/isUNPAIDMLEAVESELECTED} }">
-            <headerToolbar>
+                    <headerToolbar>
                 <Toolbar id="_IDGenToolbar1">
                     <Title id="_IDGenTitle" text="Case Manager Details"/>
                     <ToolbarSpacer id="_IDGenToolbarSpacer6"/>
@@ -50,9 +50,9 @@
         <!-- CASE MANAGER DETAILS END -->
         <!-- EMPLOYEE DETAILS START -->
         <Panel id="_IDGenPanel2" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{=(${MASTER_MODEL>/isSTDSelected} || ${MASTER_MODEL>/isMEDICALACCOMODATIONSELECTED} || ${MASTER_MODEL>/isUNPAIDMLEAVESELECTED})}">
-            <headerToolbar>
+                    <headerToolbar>
                 <Toolbar id="_IDGenToolbar6">
-                    <Title id="_IDGenTitle1" text="Employee Details"/>
+                    <Title id="_IDGenTitle1" text="{i18n>EmployeeDetailsTitle}"/>
                     <ToolbarSpacer id="_IDGenToolbarSpacer7"/>
                 </Toolbar>
             </headerToolbar>
@@ -60,7 +60,7 @@
                 <l:BlockLayoutRow id="_IDGenBlockLayoutRow1" class="sapUiNoContentPadding sapUiNoMargin">
                     <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" id="_id_TITLE1_CELL1" visible="{= ${MASTER_MODEL>/Labels/V_TITLE1_CELL1} }">
                         <f:SimpleForm id="_IDGenSimpleForm3" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" editable="true" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
-                            <Label text="{i18n>Employee Name}" design="Bold" required="true"/>
+                            <Label text="{i18n>EmployeeName}" design="Bold" required="true"/>
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true" liveChange="onLiveChangeInputField" valueHelpRequest=".onEmailValueHelp" valueHelpOnly="true" showValueHelp="true"></Input>
 
                             <Label text="{i18n>EmployeeID}" design="Bold"/>
@@ -72,7 +72,7 @@
                             <Label text="{i18n>HourlySalaried}" design="Bold"/>
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
 
-                            <Label text="{i18n>UnionNon-Union}" design="Bold"/>
+                            <Label text="{i18n>UnionNonUnion}" design="Bold"/>
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
 
                             <Label text="{i18n>Department}" design="Bold"/>
@@ -121,7 +121,7 @@
 
             <headerToolbar>
                 <Toolbar id="_IDGenToolbar7">
-                    <Title id="_IDGenTitle2" text="Short Term Disability (STD)"/>
+                    <Title id="_IDGenTitle2" text="{i18n>ShortTermDisabilitySTD}"/>
                     <ToolbarSpacer id="_IDGenToolbarSpacer8"/>
                 </Toolbar>
             </headerToolbar>
@@ -163,10 +163,10 @@
 
                             <f:content>
                                 <Label text="{i18n>DescriptionofInjuryIllness}" design="Bold" required="true"/>
-                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="Maximum character limit is 5000" maxLength="5000" width="100%" rows="3"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="{i18n>MaxCharLimit5000}" maxLength="5000" width="100%" rows="3"/>
 
                                 <Label text="{i18n>Notes}" design="Bold" required="true"/>
-                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="Maximum character limit is 5000" maxLength="5000" width="100%" rows="3"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="{i18n>MaxCharLimit5000}" maxLength="5000" width="100%" rows="3"/>
                             </f:content>
                         </f:SimpleForm>
                     </l:BlockLayoutCell>
@@ -180,8 +180,8 @@
          <Panel id="_id_CLMTY_2" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{=${worklistView>/ClaimDetails/CLMTY}=== '2'}">
 
             <headerToolbar>
-                <Toolbar >
-                    <Title  text="Long Term Disability (STD)"/>
+                    <Toolbar >
+                    <Title  text="{i18n>LongTermDisabilitySTD}"/>
                     <ToolbarSpacer />
                 </Toolbar>
             </headerToolbar>
@@ -223,10 +223,10 @@
 
                             <f:content>
                                 <Label text="{i18n>DescriptionofInjuryIllness}" design="Bold" required="true"/>
-                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="Maximum character limit is 5000" maxLength="5000" width="100%" rows="3"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="{i18n>MaxCharLimit5000}" maxLength="5000" width="100%" rows="3"/>
 
                                 <Label text="{i18n>Notes}" design="Bold" required="true"/>
-                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="Maximum character limit is 5000" maxLength="5000" width="100%" rows="3"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="{i18n>MaxCharLimit5000}" maxLength="5000" width="100%" rows="3"/>
                             </f:content>
                         </f:SimpleForm>
                     </l:BlockLayoutCell>
